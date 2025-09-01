@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'sai', url: 'https://github.com/knowledge27295/myweb.git'
+                git credentialsId: 'chintu', url: 'https://github.com/knowledge27295/myweb.git'
             }
         }
         stage("Maven Build"){
@@ -20,7 +20,7 @@ pipeline{
         }
         stage("deploy-dev"){
             steps{
-                sshagent(['tomcat-new']) {
+                sshagent(['sai']) {
                 sh """
                     scp -o StrictHostKeyChecking=no target/myweb.war ubuntu@172.31.19.139:/opt/tomcat9/webapps/
                     
