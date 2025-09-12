@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'chintu', url: 'https://github.com/knowledge27295/myweb.git'
+                git credentialsId: 'chintu', url: 'https://github.com/inumulachandrasekhar9/myweb.git'
             }
         }
         stage("Maven Build"){
@@ -22,11 +22,11 @@ pipeline{
             steps{
                 sshagent(['sai']) {
                 sh """
-                    scp -o StrictHostKeyChecking=no target/myweb.war ubuntu@172.31.19.139:/opt/tomcat9/webapps/
+                    scp -o StrictHostKeyChecking=no target/myweb.war ubuntu@172.31.18.33:/opt/tomcat/webapps/
                     
-                    ssh ubuntu@172.31.19.139  /opt/tomcat9/bin/shutdown.sh
+                    ssh ubuntu@172.31.18.33  /opt/tomcat/bin/shutdown.sh
                     
-                    ssh ubuntu@172.31.19.139  /opt/tomcat9/bin/startup.sh
+                    ssh ubuntu@172.31.18.33  /opt/tomcat/bin/startup.sh
                 
                 """
             }
