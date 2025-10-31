@@ -13,7 +13,7 @@
 
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
-        <sonar.host.url>http://35.159.163.33:9000/</sonar.host.url>
+        <sonar.host.url>http://15.223.226.39:9000/</sonar.host.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
         <!-- Updated for Java 11 -->
